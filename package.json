@@ -1,0 +1,22 @@
+{
+  "name": "phoenix-flex-ui",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "twilio flex:plugins:deploy --major",
+    "postinstall": "flex-plugin pre-script-check"
+  },
+  "dependencies": {
+    "@twilio-paste/core": "^15.3.1",
+    "@twilio-paste/icons": "^9.2.0",
+    "@twilio/flex-plugin-scripts": "7.0.6",
+    "prop-types": "^15.7.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "@twilio/flex-ui": "2.9.1",
+    "react-test-renderer": "17.0.2"
+  }
+}
