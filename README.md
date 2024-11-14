@@ -26,6 +26,12 @@ twilio plugins:install @twilio-labs/plugin-flex
 
 Run `twilio flex:plugins --help` to see all the commands we currently support. For further details on Flex Plugins refer to our documentation on the [Twilio Docs](https://www.twilio.com/docs/flex/developer/plugins/cli) page.
 
+1. Start a development environment:
+
+```bash
+  npm run start
+```
+
 # Flex Plugin Deployment and Release Scripts
 
 1. Deploy Plugin
@@ -33,7 +39,7 @@ Run `twilio flex:plugins --help` to see all the commands we currently support. F
 
 Example:
 
-```
+```bash
 npm run deploy -- --changelog="fixing runtime error" --description="v1.0.2"
 ```
 
