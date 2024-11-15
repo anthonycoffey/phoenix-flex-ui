@@ -2,7 +2,7 @@ import React from "react";
 import { FlexPlugin } from "@twilio/flex-plugin";
 import CustomTaskView from "./components/CustomTaskView/CustomTaskView";
 
-const PLUGIN_NAME = "PhoenixFlexUiPlugin";
+const PLUGIN_NAME = "PhoenixFlex";
 
 export default class PhoenixFlexUiPlugin extends FlexPlugin {
   constructor() {
