@@ -27,7 +27,7 @@ export default class PhoenixFlexUiPlugin extends FlexPlugin {
         const queryParams = new URLSearchParams(task.attributes).toString();
         url += `?${queryParams}`;
       }
-
+      console.log("debug url", { url });
       return url;
     };
   }
