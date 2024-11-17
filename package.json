@@ -1,6 +1,6 @@
 {
   "name": "phoenix-flex-ui",
-  "version": "6.0.0",
+  "version": "9.0.0",
   "private": true,
   "scripts": {
     "start": "twilio flex:plugins:start",
