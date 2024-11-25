@@ -21,6 +21,7 @@ const CustomTaskView = ({ task }) => {
       <Text>Task Channel: {task.channel || task.channelType}</Text>
       <Text>Task SID: {task.taskSid}</Text>
       <Text>Task Status: {task.status}</Text>
+      <Text>Initiated by: {task?.initiatedBy}</Text>
       <Separator orientation="horizontal" />
       <ClickToCallButton task={task} />
     </Box>

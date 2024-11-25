@@ -1,4 +1,4 @@
-import { Actions } from "@twilio/flex-ui";
+import { Actions, Manager } from "@twilio/flex-ui";
 import { Box, Button } from "@twilio-paste/core";
 import React from "react";
 
@@ -9,24 +9,35 @@ const ClickToCallButton = ({ task }) => {
     return null;
   }
 
-  // Handle the click-to-call action
+  const isUserOnline = () => {
+    const manager = Manager.getInstance();
+    const workerActivity = manager.workerClient.activity;
+    return workerActivity.name === "Available";
+  };
+
   const handleClick = async () => {
-    if (customerAddress) {
+    if (isUserOnline()) {
+      const taskAttributes = {
+        formSubmissionId: task.attributes?.formSubmissionId,
+        taskSid: task?.taskSid,
+        conversationSid: task?.conversationSid,
+        interactionSid: task?.interactionSid,
+      };
       await Actions.invokeAction("StartOutboundCall", {
         destination: customerAddress,
-        taskAttributes: task?.attributes,
+        taskAttributes,
       });
     } else {
-      console.error("Customer address is not available in task attributes");
+      alert("ERROR: You must be online to place a call.");
     }
   };
 
   return (
-    <Box padding="space20">
+    <Box padding="space50">
       <Button
         variant="primary"
         size="small"
-        padding="space30"
+        padding="space40"
         onClick={handleClick}
       >
         Call {customerAddress}

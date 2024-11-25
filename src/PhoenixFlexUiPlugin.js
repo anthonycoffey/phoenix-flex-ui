@@ -16,17 +16,12 @@ export default class PhoenixFlexUiPlugin extends FlexPlugin {
       PasteThemeProvider: CustomizationProvider,
     });
 
-    manager.strings.TaskExtraInfo =
-      "Time since last update: {{helper.durationSinceUpdate}}";
-
     flex.TaskInfoPanel.Content.replace(
       <CustomTaskView key="PhoenixFlexUiPlugin-component" />,
     );
 
-    // flex.TaskInfoPanel.Content.add(
-    //   <ClickToCallButton key="click-to-call-button" />,
-    //   {},
-    // );
+    manager.strings.TaskExtraInfo =
+      "Time since last update: {{helper.durationSinceUpdate}}";
 
     flex.CRMContainer.defaultProps.uriCallback = (task) => {
       console.log({ task });
