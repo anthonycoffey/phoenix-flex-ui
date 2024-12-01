@@ -24,12 +24,7 @@ export default class PhoenixFlexUiPlugin extends FlexPlugin {
       "Time since last update: {{helper.durationSinceUpdate}}";
 
     flex.CRMContainer.defaultProps.uriCallback = (task) => {
-      console.log({ task });
-      console.log("conference", task?.attributes?.conference);
-      console.log("conversations", task?.attributes?.conversations);
-
-      // let url = "https://feature-twilio-flex--phoenix-ui.netlify.app/search";
-      let url = "https://localhost:8888/search";
+      let url = "https://phoenix-ui.netlify.app/search";
       if (task && task.attributes) {
         const queryParams = new URLSearchParams(task.attributes).toString();
         url += `?${queryParams}`;
